@@ -1,0 +1,31 @@
+App Peliculas
+
+npx react-native run-android
+npx react-native run-ios
+npx react-native start
+
+dependencias con yarn:
+Navegacion-> https://reactnavigation.org/docs/getting-started
+yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
+
+import android.os.Bundle;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
+
+Stack
+yarn add @react-navigation/stack
+yarn add react-native-gesture-handler
+yarn add @react-native-masked-view/masked-view
+
+EN IOS
+npx pod-install ios
+
+yarn add axios
+
+
+url:
+Usamos la api de: https://www.themoviedb.org/?language=es
+https://ethercreative.github.io/react-native-shadow-generator/
