@@ -9,21 +9,27 @@ Navegacion-> https://reactnavigation.org/docs/getting-started
 yarn add @react-navigation/native
 yarn add react-native-screens react-native-safe-area-context
 
+Stack
+yarn add @react-navigation/stack
+yarn add react-native-gesture-handler
+yarn add @react-native-masked-view/masked-view
+
+yarn add axios
+yarn add react-native-snap-carousel
+yarn add -D @types/react-native-snap-carousel
+
 import android.os.Bundle;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
 }
 
-Stack
-yarn add @react-navigation/stack
-yarn add react-native-gesture-handler
-yarn add @react-native-masked-view/masked-view
+
 
 EN IOS
 npx pod-install ios
 
-yarn add axios
+
 
 
 url:
