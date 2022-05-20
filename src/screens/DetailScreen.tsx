@@ -1,19 +1,25 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
-import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { RootStackParams } from '../navigation/Navigation';
+import { useMovieDetails } from '../hooks/useMovieDetails';
+import { MovieDetails } from '../components/MovieDetails';
 
 const screenHeight = Dimensions.get('window').height
 
 interface Props extends StackScreenProps<RootStackParams, 'Details'> { }
 
-export const DetailScreen = ({ route }: Props) => {
+export const DetailScreen = ({ route, navigation }: Props) => {
+
+    console.log(navigation);
 
     const movie = route.params;
 
     const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-    console.log('movie.original_language: ', movie.original_language);
+    const { isLoading, cast, movieFull } = useMovieDetails(movie.id);
+
+    console.log(isLoading);
 
     return (
         <ScrollView>
@@ -27,6 +33,36 @@ export const DetailScreen = ({ route }: Props) => {
                 <Text style={styles.subTitle}>{movie.original_title}</Text>
                 <Text style={styles.title}>{movie.title}</Text>
             </View>
+
+            {
+                isLoading ?
+                    <ActivityIndicator size={30} color="grey" style={{ marginTop: 20 }} />/* mostrar icono de cargando */
+                    : <MovieDetails movieFull={movieFull!} cast={cast} />
+            }
+
+
+            <TouchableOpacity
+                style={{
+                    position: 'absolute',
+                    top: 30,
+                    left: 20,
+                    backgroundColor: '#fff',
+                    elevation: 10,
+                    zIndex: 999,
+                }}
+                //onPress={() => navigation.pop()}
+            >
+                <Text style={{
+                    fontSize: 50,
+                    fontWeight: 'bold',
+                    position: 'absolute',
+                    color: '#fff',
+                }}
+                onPress={() => navigation.pop()}
+                >{'X'}</Text>
+            </TouchableOpacity>
+
+
         </ScrollView>
     )
 }
@@ -38,6 +74,7 @@ const styles = StyleSheet.create({
     },
     posterImage: {
         flex: 1,
+        //resizeMode: 'center',
     },
     marginContainer: {
         marginHorizontal: 20,
