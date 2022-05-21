@@ -44,18 +44,24 @@ export const DetailScreen = ({ route, navigation }: Props) => {
             <TouchableOpacity
                 style={{
                     position: 'absolute',
-                    top: 30,
+                    right: 20,
+                    /* top: 30,
                     left: 20,
-                    backgroundColor: '#fff',
                     elevation: 10,
-                    zIndex: 999,
+                    zIndex: 999,  */
+                    backgroundColor: '#000',
+                    borderRadius: 50,
+                    width: 50,
+                    alignContent: 'center',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}
                 //onPress={() => navigation.pop()}
             >
                 <Text style={{
                     fontSize: 50,
                     fontWeight: 'bold',
-                    position: 'absolute',
+                    //position: 'absolute',
                     color: '#fff',
                 }}
                 onPress={() => navigation.pop()}
