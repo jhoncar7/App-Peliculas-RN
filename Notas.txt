@@ -17,6 +17,10 @@ yarn add @react-native-masked-view/masked-view
 yarn add axios
 yarn add react-native-snap-carousel
 yarn add -D @types/react-native-snap-carousel
+yarn add currency-formatter //dar formato a un valor numercio
+yarn add -D @types/currency-formatter
+yarn add react-native-linear-gradient // https://github.com/react-native-linear-gradient/react-native-linear-gradient
+yarn add react-native-image-colors // saber colores de la imagen https://github.com/osamaqarem/react-native-image-colors
 
 import android.os.Bundle;
 @Override

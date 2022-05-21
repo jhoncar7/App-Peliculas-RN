@@ -27,11 +27,11 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
                 <Text style={{ fontSize: 20, marginTop: 8, fontWeight: 'bold', color: '#000' }}>
                     Historia
                 </Text>
-                <Text style={{ fontSize: 16 }}>{movieFull.overview}</Text>
+                <Text style={{ fontSize: 16, color:'#000' }}>{movieFull.overview}</Text>
                 <Text style={{ fontSize: 20, marginTop: 8, fontWeight: 'bold', color: '#000' }}>
                     Presupuesto
                 </Text>
-                <Text>{currencyformatter.format(movieFull.budget, { code: 'USD' })}</Text>
+                <Text style={{color:'#000'}}>{currencyformatter.format(movieFull.budget, { code: 'USD' })}</Text>
             </View>
 
             {/* Casting */}
@@ -46,7 +46,7 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <CastItem actor={item} />}
                     showsHorizontalScrollIndicator={false}
-                    style={{ marginTop: 10, height: 70}}
+                    style={{ marginTop: 10, height: 70,}}
                 />
             </View>
         </>

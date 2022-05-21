@@ -22,7 +22,7 @@ export const CastItem = ({ actor }: Props) => {
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color:'#000' }}>
                     {actor.name}
                 </Text>
-                <Text style={{ fontSize: 16, opacity: 0.7 }}>
+                <Text style={{ fontSize: 16, opacity: 0.7, color:'#000' }}>
                     {actor.character}
                 </Text>
             </View>
